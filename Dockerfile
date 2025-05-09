@@ -41,6 +41,8 @@ RUN microdnf install -y \
     cairo \
     # Pytest \
     python3-devel \
+    # Git
+    git \
     && microdnf clean all \
     && rm -rf /var/cache/microdnf
 
