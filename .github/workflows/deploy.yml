@@ -49,9 +49,9 @@ jobs:
 
       - name: Login to Amazon ECR Public
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
+        uses: aws-actions/amazon-ecr-login@v2
         with:
-          public: true
+          registry-type: public
 
       - name: Build and push to DockerHub
         uses: docker/build-push-action@v4
