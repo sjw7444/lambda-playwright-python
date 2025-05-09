@@ -1,5 +1,7 @@
 # Lambda Playwright Python Base Image
 
+[![Deploy Docker Image](https://github.com/sjw7444/lambda-playwright-python/actions/workflows/deploy.yml/badge.svg)](https://github.com/sjw7444/lambda-playwright-python/actions/workflows/deploy.yml)
+
 This repository contains a base Docker image for running Playwright with Python on AWS Lambda with ARM support. The image is optimized for serverless environments and includes all necessary dependencies for headless Chromium browser automation.
 
 ## Features
