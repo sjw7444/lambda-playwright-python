@@ -60,7 +60,13 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/lambda-playwright-python:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/lambda-playwright-python:${{ github.sha }}
             ${{ secrets.DOCKERHUB_USERNAME }}/lambda-playwright-python:v${{ env.IMAGE_TAG }}
-          platforms: linux/arm64 
+          platforms: linux/arm64
+          cache-from: |
+            type=gha
+            type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/lambda-playwright-python:buildcache
+          cache-to: |
+            type=gha,mode=max
+            type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/lambda-playwright-python:buildcache,mode=max
 
       - name: Build and push to Amazon ECR Public
         uses: docker/build-push-action@v4
@@ -71,7 +77,13 @@ jobs:
             public.ecr.aws/${{ env.ECR_REPOSITORY }}:latest
             public.ecr.aws/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
             public.ecr.aws/${{ env.ECR_REPOSITORY }}:v${{ env.IMAGE_TAG }}
-          platforms: linux/arm64 
+          platforms: linux/arm64
+          cache-from: |
+            type=gha
+            type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/lambda-playwright-python:buildcache
+          cache-to: |
+            type=gha,mode=max
+            type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/lambda-playwright-python:buildcache,mode=max
 
       - name: Create Release
         uses: ncipollo/release-action@v1
