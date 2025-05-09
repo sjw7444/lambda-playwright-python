@@ -1,0 +1,46 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        100
+    ],
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/*.pyc": true
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}"
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.autoTestDiscoverOnSaveEnabled": true,
+    "python.testing.debugPort": 5678,
+    "docker.enableTelemetry": false,
+    "docker.showStartPage": false,
+    "docker.initializeOnStartup": true,
+    "docker.composePath": "docker-compose",
+    "docker.defaultRegistryPath": "sjw7444",
+    "docker.defaultImageTag": "latest",
+    "docker.defaultContextPath": "${workspaceFolder}",
+    "docker.defaultPlatform": "linux/arm64",
+    "docker.containers.description": {
+        "lambda-playwright": "Playwright Python Lambda Base Image"
+    }
+}

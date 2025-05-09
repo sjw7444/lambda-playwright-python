@@ -1,0 +1,17 @@
+services:
+  lambda-playwright-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sjw744/lambda-playwright-python:latest
+    platform: linux/arm64
+    volumes:
+      - .:/var/task
+    environment:
+      - PYTHONPATH=/var/task
+      - PLAYWRIGHT_BROWSERS_PATH=/opt/playwright
+      - PYTEST_ADDOPTS=-v
+    ports:
+      - "5678:5678" # Debug port
+    entrypoint: [] # Override Lambda entrypoint
+    command: sleep infinity # Keep container running

@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker",
+        "ms-python.black-formatter",
+        "ms-python.flake8",
+        "ms-python.pylint",
+        "njpwerner.autodocstring",
+        "kevinrose.vsc-python-indent",
+        "visualstudioexptteam.vscodeintellicode",
+        "ev.container-lambda-playwright-python"
+    ]
+}

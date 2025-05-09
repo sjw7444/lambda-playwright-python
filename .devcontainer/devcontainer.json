@@ -1,0 +1,41 @@
+{
+    "name": "Lambda Playwright Python",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": ".."
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-azuretools.vscode-docker",
+                "ms-python.black-formatter",
+                "ms-python.flake8",
+                "ms-python.pylint",
+                "njpwerner.autodocstring",
+                "kevinrose.vsc-python-indent",
+                "visualstudioexptteam.vscodeintellicode",
+                "ev.container-lambda-playwright-python",
+                "github.vscode-github-actions"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.testing.pytestEnabled": true,
+                "python.testing.unittestEnabled": false,
+                "python.testing.nosetestsEnabled": false,
+                "python.testing.pytestArgs": [
+                    "tests"
+                ]
+            }
+        }
+    },
+    "forwardPorts": [
+        5678
+    ],
+    "postCreateCommand": "pip install -r requirements.txt",
+    "remoteUser": "root"
+}

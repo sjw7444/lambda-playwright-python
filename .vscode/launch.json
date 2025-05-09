@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "tests/",
+                "-v"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ]
+}
