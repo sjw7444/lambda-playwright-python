@@ -11,6 +11,11 @@ env:
   ECR_REPOSITORY: j9p6g6v0/lambda-playwright-python
   IMAGE_TAG: 0.1.${{ github.run_number }}
 
+# permissions required for release and assuming the role
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: write   # This is required for actions/checkout/releases
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
