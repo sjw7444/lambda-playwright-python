@@ -1,6 +1,14 @@
 # Use AWS Lambda Python 3.13 base image
 FROM public.ecr.aws/lambda/python:3.13-arm64
 
+# Set environment variables
+ENV PYTHONUNBUFFERED=1 \
+    DEBIAN_FRONTEND=noninteractive \
+    PLAYWRIGHT_BROWSERS_PATH=/opt/playwright \
+    PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
+    PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/opt/playwright/chromium-*/chrome
+
+
 # Install system dependencies for Chromium only
 RUN microdnf install -y \
     --setopt=tsflags=nodocs \
@@ -33,20 +41,14 @@ RUN microdnf install -y \
     cairo \
     # Pytest \
     python3-devel \
-    && microdnf clean all
+    && microdnf clean all \
+    && rm -rf /var/cache/microdnf
 
 # Install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
-
-# Install Playwright and its dependencies
-# Set environment variables
-ENV PYTHONUNBUFFERED=1 \
-    DEBIAN_FRONTEND=noninteractive \
-    PLAYWRIGHT_BROWSERS_PATH=/opt/playwright \
-    PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
-    PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/opt/playwright/chromium-*/chrome
+    pip install --no-cache-dir -r requirements.txt && \
+    rm -rf /root/.cache/pip
 
 # Install Playwright browsers and set proper permissions
 RUN playwright install chromium && \
