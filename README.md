@@ -4,6 +4,11 @@
 
 This repository contains a base Docker image for running Playwright with Python on AWS Lambda with ARM support. The image is optimized for serverless environments and includes all necessary dependencies for headless Chromium browser automation.
 
+## Access the image using Docker Hub or AWS ECR
+
+- [Docker Hub](https://hub.docker.com/r/sjw7444/lambda-playwright-python)
+- [AWS ECR](https://gallery.ecr.aws/j9p6g6v0/lambda-playwright-python)
+
 ## Features
 
 - Python 3.13 support with latest performance improvements
@@ -28,12 +33,14 @@ This repository contains a base Docker image for running Playwright with Python 
 ### VS Code Dev Container
 
 This project includes a VS Code dev container configuration that provides:
+
 - Git for version control
 - Python development tools
 - All necessary VS Code extensions
 - Pre-configured testing environment
 
 To use the dev container:
+
 1. Open the project in VS Code
 2. When prompted, click "Reopen in Container"
    - Or use the Command Palette (F1) and select "Dev Containers: Reopen in Container"
@@ -124,6 +131,7 @@ To use the deployment workflow, you need to set up the following secrets in your
 ### AWS Permissions
 
 The AWS IAM role needs the following permissions:
+
 - `ecr-public:GetAuthorizationToken`
 - `ecr-public:BatchCheckLayerAvailability`
 - `ecr-public:GetRepositoryPolicy`
