@@ -20,7 +20,8 @@
                 "kevinrose.vsc-python-indent",
                 "visualstudioexptteam.vscodeintellicode",
                 "ev.container-lambda-playwright-python",
-                "github.vscode-github-actions"
+                "github.vscode-github-actions",
+                "debugpy.python"
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/usr/local/bin/python",

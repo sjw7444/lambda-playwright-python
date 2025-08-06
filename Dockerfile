@@ -8,12 +8,14 @@ ENV PYTHONUNBUFFERED=1 \
     PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
     PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/opt/playwright/chromium-*/chrome
 
-
 # Install system dependencies for Chromium only
 RUN microdnf install -y \
     --setopt=tsflags=nodocs \
     --setopt=keepcache=1 \
     # Core system libraries
+    which \
+    tar \
+    findutils \
     nss \
     nss-util \
     nspr \
@@ -39,8 +41,6 @@ RUN microdnf install -y \
     pango \
     dbus \
     cairo \
-    # Pytest \
-    python3-devel \
     && microdnf clean all \
     && rm -rf /var/cache/microdnf
 
@@ -51,7 +51,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
     rm -rf /root/.cache/pip
 
 # Install Playwright browsers and set proper permissions
-RUN playwright install chromium && \
+RUN playwright install chromium && \ 
     chmod -R 777 /opt/playwright && \
     find /opt/playwright -type f -name "chrome" -exec chmod +x {} \; && \
     # Create necessary directories
