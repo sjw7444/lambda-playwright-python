@@ -44,6 +44,7 @@ To use the dev container:
 1. Open the project in VS Code
 2. When prompted, click "Reopen in Container"
    - Or use the Command Palette (F1) and select "Dev Containers: Reopen in Container"
+3. Note that this dev container does not appear to work in Windsurf and **VS Code is recommended**
 
 ### Building Locally
 
