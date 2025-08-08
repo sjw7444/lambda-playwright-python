@@ -21,7 +21,7 @@
                 "visualstudioexptteam.vscodeintellicode",
                 "ev.container-lambda-playwright-python",
                 "github.vscode-github-actions",
-                "debugpy.python"
+                "ms-python.debugpy"
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/usr/local/bin/python",
