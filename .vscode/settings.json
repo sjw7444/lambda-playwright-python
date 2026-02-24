@@ -1,5 +1,5 @@
 {
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python.defaultInterpreterPath": "/workspaces/lambda-playwright-python/.venv/bin/python",
     "editor.formatOnSave": true,
     "editor.rulers": [
         100
