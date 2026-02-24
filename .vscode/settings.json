@@ -1,5 +1,5 @@
 {
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python.defaultInterpreterPath": "/workspaces/lambda-playwright-python/.venv/bin/python",
     "editor.formatOnSave": true,
     "editor.rulers": [
         100
@@ -17,7 +17,7 @@
         }
     },
     "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "python.analysis.typeCheckingMode": "basic",
     "python.analysis.autoImportCompletions": true,
@@ -41,6 +41,9 @@
     "docker.defaultContextPath": "${workspaceFolder}",
     "docker.defaultPlatform": "linux/arm64",
     "docker.containers.description": {
+        "lambda-playwright": "Playwright Python Lambda Base Image"
+    },
+    "containers.containers.description": {
         "lambda-playwright": "Playwright Python Lambda Base Image"
     }
 }

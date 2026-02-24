@@ -1,14 +1,16 @@
 {
     "recommendations": [
+        "ms-vscode-remote.remote-containers",
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-azuretools.vscode-docker",
+        "foxundermoon.shell-format",
         "ms-python.black-formatter",
         "ms-python.flake8",
         "ms-python.pylint",
+        "ms-python.debugpy",
         "njpwerner.autodocstring",
         "kevinrose.vsc-python-indent",
-        "visualstudioexptteam.vscodeintellicode",
-        "ev.container-lambda-playwright-python"
+        "github.vscode-github-actions"
     ]
 }

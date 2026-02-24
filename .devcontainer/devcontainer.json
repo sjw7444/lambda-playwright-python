@@ -18,13 +18,11 @@
                 "ms-python.pylint",
                 "njpwerner.autodocstring",
                 "kevinrose.vsc-python-indent",
-                "visualstudioexptteam.vscodeintellicode",
-                "ev.container-lambda-playwright-python",
                 "github.vscode-github-actions",
                 "ms-python.debugpy"
             ],
             "settings": {
-                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.defaultInterpreterPath": "/workspaces/lambda-playwright-python/.venv/bin/python",
                 "python.testing.pytestEnabled": true,
                 "python.testing.unittestEnabled": false,
                 "python.testing.nosetestsEnabled": false,
@@ -37,6 +35,6 @@
     "forwardPorts": [
         5678
     ],
-    "postCreateCommand": "pip install -r requirements.txt",
+    "postCreateCommand": "set -e; PYVER=$(/var/lang/bin/python -c 'import sys; print(f\"{sys.version_info.major}.{sys.version_info.minor}\")'); if [ \"$PYVER\" != \"3.14\" ]; then echo \"WARNING: Expected Python 3.14 in container, got $PYVER. Run: Dev Containers: Rebuild Container\"; fi; /var/lang/bin/python -m venv .venv; ./.venv/bin/python -m pip install -U pip setuptools wheel; ./.venv/bin/python -m pip install -r requirements.txt",
     "remoteUser": "root"
 }
