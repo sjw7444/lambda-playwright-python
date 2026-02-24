@@ -11,7 +11,7 @@ This repository contains a base Docker image for running Playwright with Python 
 
 ## Features
 
-- Python 3.13 support with latest performance improvements
+- Python 3.14 support with latest performance improvements
 - Playwright with headless Chromium browser
 - AWS Lambda ARM64 compatibility
 - Optimized for serverless environments
@@ -28,7 +28,7 @@ This repository contains a base Docker image for running Playwright with Python 
 - Docker
 - VS Code with Remote - Containers extension
 - AWS CLI (for ECR deployment)
-- Python 3.13+
+- Python 3.14+
 
 ### VS Code Dev Container
 
