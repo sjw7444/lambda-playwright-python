@@ -42,5 +42,8 @@
     "docker.defaultPlatform": "linux/arm64",
     "docker.containers.description": {
         "lambda-playwright": "Playwright Python Lambda Base Image"
+    },
+    "containers.containers.description": {
+        "lambda-playwright": "Playwright Python Lambda Base Image"
     }
 }
