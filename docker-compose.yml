@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: sjw744/lambda-playwright-python:latest
+    image: sjw7444/lambda-playwright-python:latest
     platform: linux/arm64
     volumes:
       - .:/var/task
