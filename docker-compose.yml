@@ -13,5 +13,7 @@ services:
       - PYTEST_ADDOPTS=-v
     ports:
       - "5678:5678" # Debug port
+    security_opt:
+      - no-new-privileges:true
     entrypoint: [] # Override Lambda entrypoint
     command: sleep infinity # Keep container running
