@@ -19,7 +19,8 @@
                 "njpwerner.autodocstring",
                 "kevinrose.vsc-python-indent",
                 "github.vscode-github-actions",
-                "ms-python.debugpy"
+                "ms-python.debugpy",
+                "foxundermoon.shell-format"
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/workspaces/lambda-playwright-python/.venv/bin/python",
